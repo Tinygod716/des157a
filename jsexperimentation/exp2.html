@@ -11,6 +11,11 @@
 <body>
     <h1></h1>
     <script>
+
+        /*this program is eatabulished based on exp1 program, which will turn 
+        first letter of each words capital letter. Based off first program,
+        this program will assign a random color to each word within that sentence. 
+        The color will be selected from within the previously defined array. */
        
         var sentence = prompt("Type something here in all lowercase", "");
 
@@ -22,7 +27,7 @@
             var words = sentence.split(' '); 
             for (var i = 0; i < words.length; i++) {
                 if (words[i].length > 0) {
-                    words[i] = words[i][0].toUpperCase() + words[i].substring(1); // 首字母大写
+                    words[i] = words[i][0].toUpperCase() + words[i].substring(1);
                 }
             }
             return words; 
@@ -40,8 +45,6 @@ var h1Element = document.querySelector('h1');
 for (var i = 0; i < capitalizedWords.length; i++) {
     var wordSpan = document.createElement('span'); 
     wordSpan.textContent = capitalizedWords[i]; 
-
-    var randomColor = colors[Math.floor(Math.random() * colors.length)];
     wordSpan.style.color = getColor(); 
 
    
