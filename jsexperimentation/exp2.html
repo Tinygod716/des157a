@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Experimentation</title>
+    <style>
+        .red{color:red;}
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <script>
+       
+        var sentence = prompt("Type something here in all lowercase", "");
+
+   
+        var colors = ['red', 'blue', 'green', 'purple', 'orange', 'pink', 'yellow', 'cyan', 'brown'];
+
+        
+        function split1() {
+            var words = sentence.split(' '); 
+            for (var i = 0; i < words.length; i++) {
+                if (words[i].length > 0) {
+                    words[i] = words[i][0].toUpperCase() + words[i].substring(1); // 首字母大写
+                }
+            }
+            return words; 
+        }
+
+        function getColor() {
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+            var capitalizedWords = split1();
+        
+
+var h1Element = document.querySelector('h1');
+
+for (var i = 0; i < capitalizedWords.length; i++) {
+    var wordSpan = document.createElement('span'); 
+    wordSpan.textContent = capitalizedWords[i]; 
+
+    var randomColor = colors[Math.floor(Math.random() * colors.length)];
+    wordSpan.style.color = getColor(); 
+
+   
+    h1Element.appendChild(wordSpan);
+
+    h1Element.appendChild(document.createTextNode(' '));
+}
+
+
+    </script>
+</body>
+</html>

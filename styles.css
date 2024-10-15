@@ -5,13 +5,11 @@ body {
 }
 
 header {
-    border-radius: 5%;
+    border-radius: 20px;
     height: 200px;
     background-color: #FFE5E5;
     display: block;
     position: relative;
-    left: -28px;
-    width: calc(100% + 80px);
     margin-top: 0;
     background-image: url(images/back1.png);
     background-repeat: no-repeat;
@@ -21,7 +19,7 @@ h1 {
     font-family: "Lemon", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 50px !important;
+    font-size: 70px !important;
     color: #87487F;
     -webkit-text-stroke-width: 4px;
   -webkit-text-stroke-color: #F32D96;
@@ -95,6 +93,11 @@ li {
 li:hover {
     background-color: #847979;
     transform: translateX(10px);
+    color: aliceblue;
+}
+
+li a:hover {
+    color: aliceblue;
 }
 
 .animation {
