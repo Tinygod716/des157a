@@ -7,12 +7,63 @@ main{
     position: relative;
 }
 
+#stone {
+    margin-left: 200px;
+}
+
+#pen {
+    position: absolute;
+    left: 34vh;
+    top: 32vh;
+    display: block;
+    animation: swing2 2s infinite ease-in-out;
+}
+
+@keyframes swing2 {
+    25% {
+        transform: rotate(10deg); /* 向右倾斜 */
+    }
+    75% {
+        transform: rotate(-10deg); /* 向左倾斜 */
+    }
+}
+
 h1 {
     font-family: "Inknut Antiqua", serif;
   font-weight: 700;
   font-style: normal;
-  text-align: right;
+  text-align: center;
+  line-height: 50px;
   font-size: 64px;
+  color: #E3DDDD;
+}
+
+.night{
+    font-size: 90px;
+    color: #232E39;
+}
+
+.vam{
+    font-size: 120px;
+    animation: colorCycle 3s infinite;
+}
+
+@keyframes colorCycle {
+    0% {
+        color: #411413;
+    }
+    25% {
+        color: #711D2B;
+    }
+    50% {
+        color: #0B0506;
+    }
+    75% {
+        color: #595455;
+    }
+    100% {
+        color: #411413;
+    }
 }
 
 .divv{
