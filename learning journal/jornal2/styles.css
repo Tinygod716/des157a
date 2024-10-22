@@ -10,17 +10,6 @@ body {
     position: relative;
 }
 
-.next {
-    font-family: "Lemon", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px !important;
-    color: #87487F;
-    -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #F32D96;
-    margin-top: 30px;
-}
-
 .pinkf {
     position: absolute;
     left: -90px;
