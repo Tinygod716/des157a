@@ -7,9 +7,39 @@ main{
     position: relative;
 }
 
+.left{
+    position: absolute;
+    top: -20vh;
+    left: -64vh;
+    width: 1000px;
+    height: 1000px;
+    transform-origin: bottom center;
+    animation: treeSwing 3s infinite ease-in-out;
+}
+
+.right{
+    position: absolute;
+    top: 10vh;
+    left: 143vh;
+    width: 1000px;
+    height: 1000px;
+    transform-origin: bottom center;
+    animation: treeSwing 3s infinite ease-in-out;
+}
+
+@keyframes treeSwing {
+    25% {
+        transform: rotate(30deg); /* 向右倾斜 */
+    }
+    75% {
+        transform: rotate(-30deg); /* 向左倾斜 */
+    }
+}
+
 #stone {
     margin-left: 200px;
 }
+
 
 #pen {
     position: absolute;
@@ -17,6 +47,33 @@ main{
     top: 32vh;
     display: block;
     animation: swing2 2s infinite ease-in-out;
+}
+
+.write{
+    position: absolute;
+    left: 52vh;
+    top: 54vh;
+    font-family: "Inknut Antiqua", serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  animation: writecolor 1.5s infinite;
+
+
+}
+
+@keyframes writecolor {
+    0% {
+        color: #958883;
+    }
+     50%{
+        color: white;
+     }
+    100% {
+        color: #958883;
+    }
 }
 
 @keyframes swing2 {
@@ -70,13 +127,14 @@ h1 {
     display: flex;
     position: relative;
     margin: auto;
+    margin-left: 20px;
 }
 
 form {
     background-color: #3F3535;
     border-radius: 20px;
-    width: 228px;
-    height: 391px;
+    width: 600px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,8 +170,8 @@ input {
 
 #rose {
     position: absolute;
-     top: 20vh;
-     right: 44vh;
+     top: -15vh;
+     right: 58vh;
 }
 
 #ss {
@@ -126,20 +184,40 @@ input {
 #mbat {
     position: absolute;
      top: 43vh;
-     right: 17vh;
+     right: 55vh;
      display: block;
      animation: swing 2s infinite ease-in-out;
 }
 
 input[type="submit"] {
-    background-color: #1A1A1A;
+    background: linear-gradient(to bottom, #8d0f0f 50%, transparent 80%);
+    background-size: 100% 200%;
+    background-position: 0 100%;
     border-color: #B83232;
     border-width: 5px;
     padding: 10px;
     margin-top: 10px;
     margin-left: auto;
-    width: 105px;
-    height: 33px;
+    width: 100px;
+    height: 50px;
+    animation: glowEffect 2s infinite alternate;
+    transition: background-position 0.5s ease-in-out;
+    color: #E3DDDD;
+    font-weight: 700;
+  font-style: normal;
+  text-align: center;
+}
+
+input[type="submit"]:hover {
+    background-position: 0 0;
+}
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 20px 10px red; /* 红色光芒 */
+    }
+    100% {
+        box-shadow: 0 0 20px 10px black; /* 黑色光芒 */
+    }
 }
 
 label {
