@@ -21,6 +21,37 @@ body {
     margin-top: 30px;
 }
 
+.Postlist {
+    padding: 30px;
+    text-align: center;
+    position: fixed;
+    left: 0;
+}
+
+.Postlist li {
+    font-family: "Lemon", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+    color: #87487F;
+    -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #F32D96;
+    margin-top: 30px;
+}
+
+.list1 {
+    font-size: 50px !important;
+}
+
+.Postlist li:hover {
+    background-color: #847979;
+    transform: translateX(5px);
+    color: aliceblue;
+    transition: all 0.5s ease;
+    border-radius: 20px;
+    padding: 10px;
+}
+
 .pinkf {
     position: absolute;
     left: -90px;
@@ -38,14 +69,14 @@ body {
 .anima {
     position: absolute;
     left: 0;
-    top: 120px;
+    top: 27vh;
     animation: orbit 10s infinite linear;
 }
 
 .anima2{
     position: absolute;
-    right: 100px;
-    top: 700px;
+    right: 10vh;
+    top: 77vh;
     animation: orbit 10s infinite linear;
 }
 
