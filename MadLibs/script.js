@@ -1,36 +1,36 @@
-(function(){
-    'use strict'
+(function() {
+    'use strict';
     const Madlib = document.querySelector('#madlib');
     console.log('reading js');
     const Form = document.querySelector('#myform');
-    Form.addEventListener('submit', function(event){
+    
+    Form.addEventListener('submit', function(event) {
         event.preventDefault();
-        //insert input 
 
-        const wordlist = document.getElementsByTagName('input').value;
-        const Spann = document.querySelectorAll('span');
-        for(let i =0;i<span.length;i++){
-            if(wordlist[i] = Spann[i]){
-                spans[i].innerHTML = wordlist[i].value;
+       
+        const wordlist = document.querySelectorAll('input[type="text"]'); 
+        const spans = document.querySelectorAll('span'); 
+        
+ 
+        for (let i = 0; i < spans.length; i++) {
+            if (wordlist[i] && wordlist[i].value) {
+                spans[i].innerHTML = wordlist[i].value; 
             }
         }
-        document.querySelector('.overlay').style.display = 'flex';
 
-        //alert('form submitted');
+    
+        let allFilled = true;
+        wordlist.forEach(input => {
+            if (input.value.trim() === "") {
+                allFilled = false;
+            }
+        });
 
-        const noun1 = document.querySelector('#noun1').value;
-        const noun2 = document.querySelector('#noun2').value;
-        const Verb = document.querySelector('#verb').value;
-        const Adj = document.querySelector('#adj').value;
-        if (!noun1 || !noun2 || !Verb || !Adj) {
-            Madlib.innerHTML = "Please fill out all the fields.";
+        if (!allFilled) {
+            alert("Please fill out all the fields.");
+            return; 
         } else {
-            const myText = `you taped the words ${noun1}, ${noun2}, ${Verb}, ${Adj}`;
-            Madlib.innerHTML = myText;
-            noun1.value = "";
-            noun2.value = "";
-            Verb.value = "";
-            Adj.value = "";
+            document.querySelector('.overlay').style.display = 'flex';
         }
     });
-}());
+})();
