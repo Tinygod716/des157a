@@ -2,6 +2,14 @@ body{
     background-color: #5F5656;
 }
 
+html {
+    overflow: hidden;
+    height: 100vh; 
+    width: 100vw; 
+    margin: 0;
+    padding: 0;
+}
+
 main{
     display: flex;
     position: relative;
@@ -218,10 +226,10 @@ input[type="submit"]:hover {
 }
 @keyframes glowEffect {
     0% {
-        box-shadow: 0 0 20px 10px red; /* 红色光芒 */
+        box-shadow: 0 0 20px 10px red; 
     }
     100% {
-        box-shadow: 0 0 20px 10px black; /* 黑色光芒 */
+        box-shadow: 0 0 20px 10px black; 
     }
 }
 
@@ -236,19 +244,19 @@ label {
 
 @keyframes swing {
     0% {
-        transform: rotate(0deg); /* 初始状态 */
+        transform: rotate(0deg);
     }
     25% {
-        transform: rotate(10deg); /* 向右倾斜 */
+        transform: rotate(10deg);
     }
     50% {
-        transform: rotate(0deg); /* 回到中间 */
+        transform: rotate(0deg); 
     }
     75% {
-        transform: rotate(-10deg); /* 向左倾斜 */
+        transform: rotate(-10deg);
     }
     100% {
-        transform: rotate(0deg); /* 再次回到中间 */
+        transform: rotate(0deg); 
     }
 }
 
@@ -274,6 +282,7 @@ label {
   color: white;
   padding: 20px;
   line-height: 30px;
+  width: 500px;
 }
 
 span {
@@ -281,7 +290,7 @@ span {
   font-weight: 700;
   font-style: normal;
   text-align: center;
-  font-size: 50px;
+  font-size: 30px;
   color: #CBC9FF;
   padding: 20px;
 }
