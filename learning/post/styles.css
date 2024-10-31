@@ -158,3 +158,17 @@ footer p:hover {
     background-color: #F76DA9;
     border-radius: 2px;
 }
+
+.question {
+    text-align: left;
+    font-size: 20px;
+    text-align: left;
+    line-height: 40px;
+}
+
+.question2 {
+    text-align: left;
+    font-size: 20px;
+    text-align: left;
+    line-height: 40px;
+}
