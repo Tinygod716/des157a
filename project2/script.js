@@ -1,65 +1,53 @@
 (function() {
     'use strict';
 
-    // 第一部分：缩放 Snowman1 图片
-    const zoomImage = document.querySelector('.Snowman1');
-    const nextImage = document.querySelector('.overlay1');
-    let scale1 = 1;
+    function addZoomEffect(zoomImage, nextImage, maxScale) {
+        let scale = 1;
+        const welcome = document.querySelector('.text-container');
+        zoomImage.addEventListener('wheel', (event) => {
+            event.preventDefault();
+            if (scale < maxScale) {
+                scale += event.deltaY * 0.001;
+                scale = Math.min(scale, maxScale);
+                zoomImage.style.transform = `scale(${scale})`;
+
+                if (scale >= maxScale) {
+                    welcome.style.display = 'none';
+                    zoomImage.style.opacity = '0';
+                    zoomImage.style.visibility = 'hidden';
+                    nextImage.classList.add('visible');
+                    
+                }
+            }
+        });
+    }
+
     const maxScale = 4;
+    addZoomEffect(document.querySelector('.Snowman1'), document.querySelector('.overlay1'), maxScale);
+    addZoomEffect(document.querySelector('.street1'), document.querySelector('.overlay2'), maxScale);
+    addZoomEffect(document.querySelector('.street2'), document.querySelector('.overlay3'), maxScale);
+    addZoomEffect(document.querySelector('.street3'), document.querySelector('.overlay4'), maxScale);
+    addZoomEffect(document.querySelector('.street4'), document.querySelector('.overlay5'), maxScale);
+    addZoomEffect(document.querySelector('.street5'), document.querySelector('.overlay6'), maxScale);
+    addZoomEffect(document.querySelector('.street6'), document.querySelector('.overlay7'), maxScale);
+    addZoomEffect(document.querySelector('.street7'), document.querySelector('.overlay8'), maxScale);
+    addZoomEffect(document.querySelector('.street8'), document.querySelector('.overlay9'), maxScale);
 
-    
-    zoomImage.addEventListener('wheel', (event) => {
-        event.preventDefault();
-        
-        if (scale1 < maxScale) {
-            scale1 += event.deltaY * 0.001;
-            scale1 = Math.min(scale1, maxScale);
-            zoomImage.style.transform = `scale(${scale1})`;
+    // rotate
+    function applyScrollEffect() {
+        const paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(paragraph => {
+            const rect = paragraph.getBoundingClientRect();
+            const inView = rect.top < window.innerHeight && rect.bottom > 0;
 
-            if (scale1 >= maxScale) {
-                zoomImage.style.display = 'none';
-                nextImage.style.display = 'block';
+            if (inView) {
+                paragraph.classList.add('scroll-rotate');
+            } else {
+                paragraph.classList.remove('scroll-rotate');
             }
-        }
-    });
+        });
+    }
 
-    // 第二部分：缩放 overlay1 中的 2p1 图片
-    const image2 = document.querySelector('.street1');
-    const nextImage1 = document.querySelector('.overlay2'); 
-    let scale2 = 1; 
-    
-    image2.addEventListener('wheel', function(event) {
-        event.preventDefault();
-        
-        if (scale2 < maxScale) {
-            scale2 += event.deltaY * 0.001;
-            scale2 = Math.min(scale2, maxScale);
-            image2.style.transform = `scale(${scale2})`;
+    window.addEventListener('scroll', applyScrollEffect);
 
-            if (scale2 >= maxScale) {
-                nextImage.style.display = 'none';
-                nextImage1.style.display = 'block';
-            }
-        }
-    });
-
-    // section3 overlay2 and street2
-    const image3 = document.querySelector('.street2');
-    const nextImage2 = document.querySelector('.overlay3'); 
-    let scale3 = 1; 
-    
-    image3.addEventListener('wheel', function(event) {
-        event.preventDefault();
-        
-        if (scale3 < maxScale) {
-            scale3 += event.deltaY * 0.001;
-            scale3 = Math.min(scale2, maxScale);
-            image3.style.transform = `scale(${scale3})`;
-
-            if (scale3 >= maxScale) {
-                image2.style.display = 'none';
-                nextImage2.style.display = 'block';
-            }
-        }
-    });
 })();

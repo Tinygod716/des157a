@@ -15,7 +15,9 @@ p {
     font-family: "Jersey 15", sans-serif;
     font-weight: 400;
     font-style: normal;
-    color: white; /* 使用白色更适合深色背景 */
+    color: white;
+    transition: transform 0.5s ease;
+  transform-origin: center;
 }
 
 .container {
@@ -27,7 +29,7 @@ p {
 .Snowman1 {
     width: 300px;
     border: 5px solid #888;
-    cursor: pointer; /* 鼠标悬停时显示指针 */
+    cursor: pointer; 
     transition: transform 0.3s ease;
 }
 
@@ -47,38 +49,82 @@ p {
     width: 200px;
 }
 
-/* Overlay 样式 */
-.overlay1, .overlay2, .overlay3 {
+/* Overlay */
+.overlay1, .overlay2, .overlay3, .overlay4, .overlay5, .overlay6, .overlay7, .overlay8 {
     position: fixed;
     top: 0;
     left: 0;
     width: 1077px;
     height: 647px;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.8); /* 添加半透明黑色背景 */
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 2; /* 保证 overlay 位于前景 */
-    display: none;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
     border: #888;
     border-width: 10px;
     border-style: solid;
 }
 
 
-.overlay1 img, .overlay2 img, .overlay3 img {
+.overlay1 img, .overlay2 img, .overlay3 img, .overlay4 img, .overlay5 img, .overlay6 img {
     border: 8px solid #888;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
 
-.overlay1 p {
+.overlay1 p, .overlay2 p, .overlay3 p, .overlay4 p,.overlay5 p,.overlay6 p, .overlay7 p {
     position: absolute;
-    bottom: 10px; /* 调整位置 */
+    bottom: 10px;
     left: 10px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明背景，提升可读性 */
+    background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
 }
+
+.ssw {
+    display: flex;
+    top: 70vh;
+    color: #1e1e1e;
+}
+
+.swww{
+    font-size: 70px;
+}
+
+/* animation */
+
+.fade-in {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scrollRotate {
+    from {
+      transform: translateY(0) rotate(0deg);
+    }
+    to {
+      transform: translateY(-20px) rotate(360deg);
+    }
+  }
+
+  .scroll-rotate {
+    animation: scrollRotate 2s ease-in-out forwards;
+  }
