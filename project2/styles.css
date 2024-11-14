@@ -52,8 +52,6 @@ p {
 /* Overlay */
 .overlay1, .overlay2, .overlay3, .overlay4, .overlay5, .overlay6, .overlay7, .overlay8 {
     position: fixed;
-    top: 0;
-    left: 0;
     width: 1077px;
     height: 647px;
     overflow: hidden;
@@ -72,7 +70,6 @@ p {
 
 
 .overlay1 img, .overlay2 img, .overlay3 img, .overlay4 img, .overlay5 img, .overlay6 img {
-    border: 8px solid #888;
     cursor: pointer;
     transition: transform 0.3s ease;
 }
@@ -85,6 +82,7 @@ p {
     background-color: rgba(0, 0, 0, 0.5);
     padding: 5px 10px;
     border-radius: 5px;
+    animation: scrollRotate 1s ease infinite;
 }
 
 .ssw {
@@ -117,11 +115,15 @@ p {
 }
 
 @keyframes scrollRotate {
-    from {
-      transform: translateY(0) rotate(0deg);
+    0% {
+        opacity: 0;
     }
-    to {
-      transform: translateY(-20px) rotate(360deg);
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
     }
   }
 
