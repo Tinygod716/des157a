@@ -1,0 +1,211 @@
+body {
+    background-color: #251A1A;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+p{
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+h1 {
+    font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+  font-size: 100px;
+  margin-bottom: 0;
+}
+
+/* upper part*/
+
+button{
+  font-size: 60px;
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.divv {
+    display: flex;
+    gap: 100px;
+    align-items: flex-start;
+}
+
+#bigdice.bounce {
+    animation: bounce 0.5s ease-in-out;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px); 
+    }
+}
+
+.Pointer{
+  position: absolute;
+  display: none;
+  left: 47%;
+  top: 93vh;
+}
+
+.roll{
+    color: #F70404;
+}
+
+.die {
+    color: #3798FF;
+}
+
+h2 {
+    font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.player1{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.player1 p {
+    text-align: center;
+    color: aliceblue;
+    font-size: 79px;
+    margin-bottom: 20px;
+}
+
+.player2 {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.player2 p {
+    text-align: center;
+    color: aliceblue;
+    font-size: 79px;
+    margin-bottom: 20px;
+}
+
+.startgame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startgame p {
+    font-size: 96px;
+}
+
+
+/* animation for img*/
+
+.expand-and-fade {
+    position: fixed; /* Make the image fill the screen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1); /* Center and start at normal size */
+    animation: expandFade 2s ease-out forwards; /* Apply animation */
+    z-index: 9999; /* Ensure it's on top */
+}
+ 
+@keyframes expandFade {
+    0% {
+        transform: translate(-50%, -50%) scale(1); /* Normal size */
+        opacity: 1; /* Fully visible */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(10); /* Grow 10x */
+        opacity: 0; /* Fully transparent */
+    }
+}
+
+/* animation moving to two side*/
+
+.moving-left {
+    animation: moveleft 3s ease-out forwards;
+    position: absolute;
+}
+
+.moving-right {
+    animation: moveright 3s ease-out forwards;
+    position: absolute;
+}
+@keyframes moveleft {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-50vh, -400px);
+    }
+}
+
+@keyframes moveright {
+    0% {
+        transform: translate(0, 0); 
+    }
+    100% {
+        transform: translate(64vh, -400px); 
+    }
+}
+
+/* Score*/
+
+.ScoreOne{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+    font-size: 100px;
+    text-align: center;
+}
+
+.ScoreTwo{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+    font-size: 100px;
+    text-align: center;
+}
+
+#game{
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;
+}
+
+#actions {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;
+}
+
+#score {
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: aliceblue;
+    font-size: 50px;
+    text-align: center;
+}
+
+
+
