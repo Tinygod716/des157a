@@ -148,7 +148,6 @@
                 throwDice();
             }, 1000); // Add delay to simulate dice rolling animation
         });
-        showCurrentPlayerIndicator(); // Show the current player indicator
     }
     
     // Function to Roll the Dice
@@ -215,7 +214,6 @@
         if (gameData.score[gameData.index] >= gameData.gameEnd) {
             scoreDiv.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
             actionArea.innerHTML = ''; // Clear actions
-            gameControl.innerHTML = '<button id="quit">Start a New Game?</button>';
             document.getElementById('quit').addEventListener('click', function () {
                 location.reload();
             });
