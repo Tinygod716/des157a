@@ -208,4 +208,27 @@ h2 {
 }
 
 
+/* weapon animation*/
+
+.cut {
+    position: absolute;
+    top: 39%;
+    left: 7%;
+}
+
+.knief{
+    position: absolute;
+    top: 32%;
+    left: 67%;
+}
+
+.reddice{
+    position: absolute;
+    top: 80%;
+    left: 45%;
+    width: 100px;
+    height: 90px;
+    display: none;
+}
+
 

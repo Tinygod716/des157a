@@ -7,7 +7,7 @@
     const playerTwoP = document.querySelector('.player2 p');
     const fingerOne = document.querySelector('.Finger1');
     const fingerTwo = document.querySelector('.Finger2');
-    const smalldice = document.querySelector('.Pointer');
+    const smalldice = document.querySelector('.reddice');
     const bigDice = document.querySelector('#bigdice');
     const playerOneImg = document.querySelector('.player1 img');
     const playerTwoImg = document.querySelector('.player2 img');
@@ -70,6 +70,7 @@
             playerOneP.addEventListener('click', function () {
                 handlePlayerClick(playerOneImg, playerOneDiv, playerTwoDiv, fingerOne, fingerTwo);
                 setUpTurn();
+                removeStartButton();
             });
             playerOneP.classList.add('click-bound');
         }
@@ -78,8 +79,15 @@
             playerTwoP.addEventListener('click', function () {
                 handlePlayerClick(playerTwoImg, playerTwoDiv, playerOneDiv, fingerTwo, fingerOne);
                 setUpTurn();
+                removeStartButton();
             });
             playerTwoP.classList.add('click-bound');
+        }
+    }
+
+    function removeStartButton() {
+        if (startButton && startButton.parentNode) {
+            startButton.parentNode.removeChild(startButton);
         }
     }
 
@@ -153,16 +161,22 @@
     // Function to Roll the Dice
     function throwDice() {
         actionArea.innerHTML = '';
-        gameData.roll1 = Math.floor(Math.random() * 6) + 1;
-        gameData.roll2 = Math.floor(Math.random() * 6) + 1;
-        gameData.rollSum = gameData.roll1 + gameData.roll2;
+        smalldice.style.display = 'block';   
+        setTimeout(() => {
+            smalldice.style.display = 'none'; 
+            
+           
+            gameData.roll1 = Math.floor(Math.random() * 6) + 1;
+            gameData.roll2 = Math.floor(Math.random() * 6) + 1;
+            gameData.rollSum = gameData.roll1 + gameData.roll2;
     
-        game.innerHTML = `<p>Rolling dice for ${gameData.players[gameData.index]}</p>`;
-        game.innerHTML += `<img src="${gameData.dice[gameData.roll1 - 1]}">
-                           <img src="${gameData.dice[gameData.roll2 - 1]}">`;
+            game.innerHTML = `<p>Rolling dice for ${gameData.players[gameData.index]}</p>`;
+            game.innerHTML += `<img src="${gameData.dice[gameData.roll1 - 1]}">
+                               <img src="${gameData.dice[gameData.roll2 - 1]}">`;
     
-        handleRollOutcome();
-        updateScoreDisplay(); // Update the score after dice roll
+            handleRollOutcome();
+            updateScoreDisplay(); 
+        }, 1000); 
     }
     
     // Handle different outcomes based on dice roll
