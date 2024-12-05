@@ -52,8 +52,8 @@ p {
 /* Overlay */
 .overlay1, .overlay2, .overlay3, .overlay4, .overlay5, .overlay6, .overlay7, .overlay8 {
     position: fixed;
-    width: 1077px;
-    height: 647px;
+    width: 827px;
+    height: 567px;
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
@@ -72,6 +72,8 @@ p {
 .overlay1 img, .overlay2 img, .overlay3 img, .overlay4 img, .overlay5 img, .overlay6 img {
     cursor: pointer;
     transition: transform 0.3s ease;
+    width: 827px;
+    height: 567px;
 }
 
 .overlay1 p, .overlay2 p, .overlay3 p, .overlay4 p,.overlay5 p,.overlay6 p, .overlay7 p {
@@ -130,3 +132,67 @@ p {
   .scroll-rotate {
     animation: scrollRotate 2s ease-in-out forwards;
   }
+
+  .tellstory {
+    width: 268px;
+    height: 354px;
+    position: absolute;
+    left: 159vh;
+    top: 30vh;
+    visibility:hidden;
+  }
+
+  .tellstory p {
+    font-size: 24px;
+  }
+
+  .text-fade-out{
+    animation: myAnim1 2s ease 0s 1 normal forwards;
+  }
+
+  .text-fade-in {
+    animation: myAnim2 2s linear 0s 1 normal forwards;
+  }
+
+  @keyframes myAnim1 {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+
+@keyframes myAnim2 {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+#toggleMusic {
+    width: 66px;
+    height: 55px;
+    position: absolute;
+    left: 10vh;
+    top: 10vh;
+    animation: orbit 10s infinite linear;
+    cursor: pointer;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(0px) rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0px) rotate(-360deg);
+    }
+}
