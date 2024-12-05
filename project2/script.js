@@ -1,56 +1,5 @@
 (function () {
     'use strict';
-
-    function setupBackgroundMusic() {
-        const music = document.querySelector('.backgroundMusic');
-        const playmusic = document.querySelector('.toggleMusic');
-
-        let isPlaying = false;
-
-        window.addEventListener('load', function() {
-            music.play().catch((error) => {
-                console.warn('error', error);
-            });
-        });
-
-        playmusic.addEventListener('click', function() {
-            if (isPlaying) {
-                music.pause();
-            } else {
-                music.play();
-            }
-            isPlaying = !isPlaying;
-        })
-    }
-
-
-        //narrtive change
-    function updateNarritiveContent(narritive, newText) {
-        if (!narritive) return;
-
-        narritive.style.visibility = 'visible';
-        narritive.classList.remove('text-fade-in');
-        narritive.classList.add('text-fade-out');
-
-        
-        narritive.addEventListener('animationend', function onFadeOut() {
-            if (narritive.classList.contains('text-fade-out')) {
-               
-                const paragraph = narritive.querySelector('p');
-                if (paragraph) {
-                    paragraph.textContent = newText;
-                }
-
-               
-                narritive.classList.remove('text-fade-out');
-                narritive.classList.add('text-fade-in');
-
-                
-                narritive.removeEventListener('animationend', onFadeOut);
-            }
-        });
-    }
-
     
     function addZoomEffect(zoomImage, nextImage, narritive, maxScale, newText) {
         if (!zoomImage || !nextImage || !narritive) return;
@@ -90,7 +39,6 @@
         document.querySelector('.overlay1'),
         narritive,
         maxScale,
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"
     );
 
     addZoomEffect(
@@ -98,7 +46,6 @@
         document.querySelector('.overlay2'),
         narritive,
         maxScale,
-        'are you real?areyou real? are you real?areyouuuuuuuureallllllll? are you real? ARE YOU REAL? are you real?'
     );
 
     addZoomEffect(
@@ -106,7 +53,6 @@
         document.querySelector('.overlay3'),
         narritive,
         maxScale,
-        'do you think this dream has a meaning?'
     );
 
     addZoomEffect(
@@ -114,7 +60,6 @@
         document.querySelector('.overlay4'),
         narritive,
         maxScale,
-        'ℹ Į⚉⋎ല ᵧ⚉ㄩ I love you'
     );
 
     addZoomEffect(
@@ -122,7 +67,6 @@
         document.querySelector('.overlay5'),
         narritive,
         maxScale,
-        'new message 4'
     );
 
     addZoomEffect(
@@ -130,7 +74,6 @@
         document.querySelector('.overlay6'),
         narritive,
         maxScale,
-        'new messsage 5'
     );
 
     addZoomEffect(
@@ -138,13 +81,13 @@
         document.querySelector('.overlay7'),
         narritive,
         maxScale,
-        'new message 5'
     );
     addZoomEffect(
         document.querySelector('.street7'),
         document.querySelector('.overlay8'),
         narritive,
         maxScale,
-        'new message 6'
     );
+
+    setupBackgroundMusic();
 })();

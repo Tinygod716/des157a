@@ -8,6 +8,7 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden
+
 }
 
 p {
@@ -138,13 +139,15 @@ p {
     width: 268px;
     height: 354px;
     position: absolute;
-    left: 159vh;
+    left: 157vh;
     top: 30vh;
     visibility:hidden;
+    color: #FF97E7;
   }
 
   .tellstory p {
     font-size: 24px;
+    color: #FF97E7;
   }
 
   .text-fade-out{

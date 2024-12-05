@@ -1,0 +1,202 @@
+body {
+    background-image: url('images/27MX.gif');
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden
+
+}
+
+p {
+    font-size: 40px;
+    margin-top: 20px;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    transition: transform 0.5s ease;
+  transform-origin: center;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.Snowman1 {
+    width: 300px;
+    border: 5px solid #888;
+    cursor: pointer; 
+    transition: transform 0.3s ease;
+}
+
+.text-container {
+    text-align: center;
+}
+
+.welcome-text {
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-family: "Jersey 15", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.image-small {
+    width: 200px;
+}
+
+/* Overlay */
+.overlay1, .overlay2, .overlay3, .overlay4, .overlay5, .overlay6, .overlay7, .overlay8 {
+    position: fixed;
+    width: 827px;
+    height: 567px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    border: #888;
+    border-width: 10px;
+    border-style: solid;
+}
+
+
+.overlay1 img, .overlay2 img, .overlay3 img, .overlay4 img, .overlay5 img, .overlay6 img {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 827px;
+    height: 567px;
+}
+
+.overlay1 p, .overlay2 p, .overlay3 p, .overlay4 p,.overlay5 p,.overlay6 p, .overlay7 p {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: scrollRotate 1s ease infinite;
+}
+
+.ssw {
+    display: flex;
+    top: 70vh;
+    color: #1e1e1e;
+}
+
+.swww{
+    font-size: 70px;
+}
+
+/* animation */
+
+.fade-in {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scrollRotate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+  }
+
+  .scroll-rotate {
+    animation: scrollRotate 2s ease-in-out forwards;
+  }
+
+  .tellstory {
+    width: 268px;
+    height: 354px;
+    position: absolute;
+    left: 157vh;
+    top: 30vh;
+    visibility:hidden;
+    color: #FF97E7;
+  }
+
+  .tellstory p {
+    font-size: 24px;
+    color: #FF97E7;
+  }
+
+  .text-fade-out{
+    animation: myAnim1 2s ease 0s 1 normal forwards;
+  }
+
+  .text-fade-in {
+    animation: myAnim2 2s linear 0s 1 normal forwards;
+  }
+
+  @keyframes myAnim1 {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	100% {
+		opacity: 0;
+		transform: scale(0.6);
+	}
+}
+
+@keyframes myAnim2 {
+	0% {
+		opacity: 0;
+		transform: translateX(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.toggleMusic {
+    width: 66px;
+    height: 55px;
+    position: absolute;
+    left: 10vh;
+    top: 10vh;
+    animation: orbit 10s infinite linear;
+    cursor: pointer;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(0px) rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(0px) rotate(-360deg);
+    }
+}
