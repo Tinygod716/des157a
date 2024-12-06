@@ -16,6 +16,30 @@
     const gameControl = document.querySelector('#gamecontrol');
     const game = document.querySelector('#game');
     const actionArea = document.querySelector('#actions');
+
+
+    //music effect 
+    function setupBackgroundMusic() {
+        const music = document.querySelector('.backgroundMusic');
+        const playmusic = document.querySelector('.toggleMusic');
+
+        let isPlaying = false;
+
+        window.addEventListener('load', function() {
+            music.play().catch((error) => {
+                console.warn('error', error);
+            });
+        });
+
+        playmusic.addEventListener('click', function() {
+            if (isPlaying) {
+                music.pause();
+            } else {
+                music.play();
+            }
+            isPlaying = !isPlaying;
+        })
+    }
     
     // Create score display dynamically
     const scoreDiv = document.createElement('div');
@@ -42,8 +66,16 @@
         animateDice();
         assignFingers();
         smalldice.style.display = "none";
-        startButton.textContent = 'Pick a Player';
+        const quitButton = document.querySelector('button');
+        quitButton.textContent = "Wanna quit?";
+        quitButton.id = 'quitButton';
         setupPlayerClickActions();
+
+        startButton.parentNode.replaceChild(quitButton, startButton);
+
+        quitButton.addEventListener('click', function(){
+            window.location.href = 'file:///Users/tinygod716/Desktop/des157a/gameon/index.html';
+        })
     });
 
     // Animate Dice
