@@ -17,29 +17,6 @@
     const game = document.querySelector('#game');
     const actionArea = document.querySelector('#actions');
 
-
-    //music effect 
-    function setupBackgroundMusic() {
-        const music = document.querySelector('.backgroundMusic');
-        const playmusic = document.querySelector('.toggleMusic');
-
-        let isPlaying = false;
-
-        window.addEventListener('load', function() {
-            music.play().catch((error) => {
-                console.warn('error', error);
-            });
-        });
-
-        playmusic.addEventListener('click', function() {
-            if (isPlaying) {
-                music.pause();
-            } else {
-                music.play();
-            }
-            isPlaying = !isPlaying;
-        })
-    }
     
     // Create score display dynamically
     const scoreDiv = document.createElement('div');
@@ -62,6 +39,8 @@
 
     // Game Start: Button Click
     startButton.addEventListener('click', function (event) {
+        const clickSound = new Audio('game.wav'); // 替换为音效文件的实际路径
+        clickSound.play();
         event.preventDefault();
         animateDice();
         assignFingers();
@@ -100,6 +79,8 @@
     function setupPlayerClickActions() {
         if (!playerOneP.classList.contains('click-bound')) {
             playerOneP.addEventListener('click', function () {
+                const clickSound = new Audio('game.wav'); 
+                clickSound.play();
                 handlePlayerClick(playerOneImg, playerOneDiv, playerTwoDiv, fingerOne, fingerTwo);
                 setUpTurn();
                 removeStartButton();
@@ -162,12 +143,12 @@
     // Game Data
     const gameData = {
         dice: [
-            'image/1die.jpg',
-            'image/2die.jpg',
-            'image/3die.jpg',
-            'image/4die.jpg',
-            'image/5die.jpg',
-            'image/6die.jpg'
+            'image/1die.png',
+            'image/2die.png',
+            'image/3die.png',
+            'image/4die.png',
+            'image/5die.png',
+            'image/6die.png'
         ],
         players: ['Player 1', 'Player 2'],
         score: [0, 0],
@@ -183,6 +164,8 @@
         game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`;
         actionArea.innerHTML = '<button id="roll">Roll the Dice</button>';
         document.getElementById('roll').addEventListener('click', function () {
+            const clickSound = new Audio('preview.mp3'); 
+            clickSound.play();
             animateDice();
             setTimeout(() => {
                 throwDice();
@@ -232,6 +215,8 @@
             if (gameData.score[gameData.index] < gameData.gameEnd) {
                 actionArea.innerHTML = '<button id="rollagain">Roll Again</button> <button id="pass">Pass Turn</button>';
                 document.getElementById('rollagain').addEventListener('click', function () {
+                const clickSound = new Audio('preview.mp3'); 
+                clickSound.play();
                     animateDice();
                     setTimeout(() => {
                         throwDice();
