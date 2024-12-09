@@ -151,11 +151,11 @@ p {
   }
 
   .text-fade-out{
-    animation: myAnim1 2s ease 0s 1 normal forwards;
+    animation: myAnim1 0.5s ease 0s 1 normal forwards;
   }
 
   .text-fade-in {
-    animation: myAnim2 2s linear 0s 1 normal forwards;
+    animation: myAnim2 1s linear 0s 1 normal forwards;
   }
 
   @keyframes myAnim1 {
