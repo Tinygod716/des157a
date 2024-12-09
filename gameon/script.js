@@ -39,7 +39,7 @@
 
     // Game Start: Button Click
     startButton.addEventListener('click', function (event) {
-        const clickSound = new Audio('game.wav'); // 替换为音效文件的实际路径
+        const clickSound = new Audio('game.wav');
         clickSound.play();
         event.preventDefault();
         animateDice();
@@ -53,7 +53,7 @@
         startButton.parentNode.replaceChild(quitButton, startButton);
 
         quitButton.addEventListener('click', function(){
-            window.location.href = 'file:///Users/tinygod716/Desktop/des157a/gameon/index.html';
+            window.location.href = 'https://tinygod716.github.io/des157a/gameon/index.html';
         })
     });
 
